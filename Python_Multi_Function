@@ -1,0 +1,340 @@
+def Multifunction():
+    while True:
+        Check=str(input("Enter 'Yes' to use this program and 'No' to close this program:"))
+        if Check=="Yes":
+            print("Welcome to our program what you like to do today......")
+            print("Enter 'Grade' to use Grade sheet generator")
+            print("Enter 'Calendar' to use 2025 Calendar")
+            print("Enter 'Bank' to nuse Banking System")
+            print("Enter 'Exit' to close this program")
+            Enter = str(input("Enter:"))
+            if Enter == "Grade":
+                def Grade():
+                    Total_Student = int(input("How many students are there in class: "))
+                    Student = []
+                    Marks = {}
+                    grade = []
+                    All = []
+
+                    for i in range(Total_Student):
+                        name = input(f"Enter name of student {i + 1}: ")
+                        Student.append(name)
+
+                    print("\nAll student names:")
+                    for name in Student:
+                        print(name)
+
+                    print("\nNow enter all student marks of 5 subjects:")
+                    print(
+                        "Now enter name of student name to add marks and after input marks Enter 'Done' to complete project")
+                    while True:
+                        Select = str(input("Enter name of student:"))
+                        if Select == "Done":
+                            break
+                        if Select not in Student:
+                            print("Student not found try again:")
+                            continue
+
+                        print(f"Enter the marks of{Select}")
+                        b = int(input("  Math: "))
+                        c = int(input("  Nepali: "))
+                        d = int(input("  Science: "))
+                        e = int(input("  Social: "))
+                        g = int(input("  Computer: "))
+                        Student_marks = [b, c, d, e, g]
+                        # Marks.append(Student_marks)
+                        Marks[Select] = Student_marks
+
+                    print("\nAll student marks and average percent:")
+                    for student in Marks:
+                        total = sum(Marks[student])
+                        average = total / 5
+                        if average >= 90:
+                            grade = "A+"
+                        elif average >= 80:
+                            grade = "A"
+                        elif average >= 70:
+                            grade = "B+"
+                        elif average >= 60:
+                            grade = "B"
+                        elif average >= 50:
+                            grade = "C+"
+                        elif average >= 40:
+                            grade = "C"
+                        elif average >= 35:
+                            grade = "D"
+                        else:
+                            grade = ("NG")
+                        if average >= 90:
+                            All = ("The Highest Marks in Class")
+                        elif average <= 40:
+                            All = ("The Lowest Marks in Class")
+                        else:
+                            All = ("The Average Marks in Class")
+
+                        print(
+                            f"{student} - Marks: {Marks[student]} | Average: {average:.2f}% | Grade: {grade} |Rank: {All}")
+
+                Grade()
+            elif Enter == "Calendar":
+                def Calendar():
+                    Year = int(input("Enter year:"))
+                    if Year == 2025:
+                        Month = str(input("Enter month:"))
+                        print("")
+                        if Month == "January":
+                            print(f"{2025:8}{'/'}{'January'}")
+                            print("Sun|Mon|Tue|Wed|Thu|Fri|Sat")
+                            days = 31
+                            start_day = 3  # Wednesday
+                            print("   " * start_day, end="  ")
+                            for day in range(1, days + 1):
+                                print(f"{day:3}", end=" ")
+                                start_day += 1
+                                if start_day == 7:
+                                    print()
+                                    start_day = 0
+                        elif Month == "February":
+                            print(f"{2025:8}{'/'}{'February'}")
+                            print("Sun|Mon|Tue|Wed|Thu|Fri|Sat")
+                            days = 28
+                            start_day = 6
+                            print("   " * start_day, end="     ")
+                            for day in range(1, days + 1):
+                                print(f"{day:3}", end=" ")
+                                start_day += 1
+                                if start_day == 7:
+                                    print()
+                                    start_day = 0
+                        elif Month == "March":
+                            print(f"{2025:8}{'/'}{'March'}")
+                            print("Sun|Mon|Tue|Wed|Thu|Fri|Sat")
+                            days = 31
+                            start_day = 6
+                            print("   " * start_day, end="     ")
+                            for day in range(1, days + 1):
+                                print(f"{day:3}", end=" ")
+                                start_day += 1
+                                if start_day == 7:
+                                    print()
+                                    start_day = 0
+                        elif Month == "April":
+                            print(f"{2025:8}{'='}{'April'}")
+                            print("Sun|Mon|Tue|Wed|Thu|Fri|Sat")
+                            days = 30
+                            start_day = 2
+                            print("   " * start_day, end="  ")
+                            for day in range(1, days + 1):
+                                print(f"{day:3}", end=" ")
+                                start_day += 1
+                                if start_day == 7:
+                                    print()
+                                    start_day = 0
+                        elif Month == "May":
+                            print(f"{2025:8}{'/'}{'May'}")
+                            print("Sun|Mon|Tue|Wed|Thu|Fri|Sat")
+                            days = 31
+                            start_day = 4
+                            print("   " * start_day, end="   ")
+                            for day in range(1, days + 1):
+                                print(f"{day:3}", end=" ")
+                                start_day += 1
+                                if start_day == 7:
+                                    print()
+                                    start_day = 0
+                            if start_day != 0:
+                                print()
+                        elif Month == "June":
+                            print(f"{2025:8}{'/'}{'June'}")
+                            print("Sun|Mon|Tue|Wed|Thu|Fri|Sat")
+                            days = 30
+                            start_day = 0
+                            print("   " * start_day, end="")
+                            for day in range(1, days + 1):
+                                print(f"{day:3}", end=" ")
+                                start_day += 1
+                                if start_day == 7:
+                                    print()
+                                    start_day = 0
+                            if start_day != 0:
+                                print()
+                        elif Month == "July":
+                            print(f"{2025:8}{'/'}{'July'}")
+                            print("Sun|Mon|Tue|Wed|Thu|Fri|Sat")
+                            days = 31
+                            start_day = 2
+                            print("   " * start_day, end=" ")
+                            for day in range(1, days + 1):
+                                print(f"{day:3}", end=" ")
+                                start_day += 1
+                                if start_day == 7:
+                                    print()
+                                    start_day = 0
+                            if start_day != 0:
+                                print()
+                        elif Month == "August":
+                            print(f"{2025:8}{'/'}{'August'}")
+                            print("Sun|Mon|Tue|Wed|Thu|Fri|Sat")
+                            days = 31
+                            start_day = 5
+                            print("   " * start_day, end="     ")
+                            for day in range(1, days + 1):
+                                print(f"{day:3}", end=" ")
+                                start_day += 1
+                                if start_day == 7:
+                                    print()
+                                    start_day = 0
+                            if start_day != 0:
+                                print()
+                        elif Month == "September":
+                            print(f"{2025:8}{'/'}{'September'}")
+                            print("Sun|Mon|Tue|Wed|Thu|Fri|Sat")
+                            days = 30
+                            start_day = 1
+                            print("   " * start_day, end=" ")
+                            for day in range(1, days + 1):
+                                print(f"{day:3}", end=" ")
+                                start_day += 1
+                                if start_day == 7:
+                                    print()
+                                    start_day = 0
+                            if start_day != 0:
+                                print()
+                        elif Month == "October":
+                            print(f"{2025:8}{'/'}{'October'}")
+                            print("Sun|Mon|Tue|Wed|Thu|Fri|Sat")
+                            days = 31
+                            start_day = 3
+                            print("   " * start_day, end="   ")
+                            for day in range(1, days + 1):
+                                print(f"{day:3}", end=" ")
+                                start_day += 1
+                                if start_day == 7:
+                                    print()
+                                    start_day = 0
+                            if start_day != 0:
+                                print()
+                        elif Month == "November":
+                            print(f"{2025:8}{'/'}{'November'}")
+                            print("Sun|Mon|Tue|Wed|Thu|Fri|Sat")
+                            days = 30
+                            start_day = 6
+                            print("   " * start_day, end="     ")
+                            for day in range(1, days + 1):
+                                print(f"{day:3}", end=" ")
+                                start_day += 1
+                                if start_day == 7:
+                                    print()
+                                    start_day = 0
+                            if start_day != 0:
+                                print()
+
+                        elif Month == "December":
+                            print(f"{2025:8}{'/'}{'December'}")
+                            print("Sun|Mon|Tue|Wed|Thu|Fri|Sat")
+                            days = 31
+                            start_day = 1
+                            print("   " * start_day, end=" ")
+                            for day in range(1, days + 1):
+                                print(f"{day:3}", end=" ")
+                                start_day += 1
+                                if start_day == 7:
+                                    print()
+                                    start_day = 0
+                            if start_day != 0:
+                                print()
+                        else:
+                            print("couldn't find........")
+
+                    else:
+                        print("Enter a proper year")
+
+                Calendar()
+
+            elif Enter == "Bank":
+                def Sheet():
+                    Total_Account = int(input("How many Account Need to create: "))
+                    Account = {}
+
+                    for i in range(Total_Account):
+                        name = input(f"Enter name of Customer {i + 1}: ")
+                        Pin = input(f"Enter the PIN of Customer {name}: ")
+                        Balance = float(input(f"Enter the Balance of Customer {name}: "))
+                        Account[name] = {
+                            'pin': Pin,
+                            'balance': Balance  # lowercase and float
+                        }
+
+                    print("\nAll Account Holder Name And Pin:")
+                    for name, info in Account.items():
+                        print(f"Name: {name} | PIN: {info['pin']} | Balance: Rs.{info['balance']}")
+
+                    print("\n")
+                    while True:
+                        print("Welcome to Laxmi Chit Fund..")
+                        print("Enter '1' to Deposit money.")
+                        print("Enter '2' to Withdraw money.")
+                        print("Enter '3' to Check Balance of account.")
+                        print("Enter '4' to Exit from Bank Server.")
+
+                        Check = int(input("Enter here: "))
+                        if Check == 1:
+                            name = input("Enter customer name: ")
+                            if name not in Account:
+                                print("Customer not found!")
+                                continue
+
+                            pin = input("Enter your PIN: ")
+                            if pin != Account[name]['pin']:
+                                print("Incorrect PIN!")
+                                continue
+
+                            amount = float(input("Enter amount to deposit: "))
+                            Account[name]['balance'] += amount
+                            print(f"Rs. {amount} deposited successfully.")
+
+                        elif Check == 2:
+                            name = input("Enter customer name: ")
+                            if name not in Account:
+                                print("Customer not found!")
+                                continue
+
+                            pin = input("Enter your PIN: ")
+                            if pin != Account[name]['pin']:
+                                print("Incorrect PIN!")
+                                continue
+
+                            amount = float(input("Enter amount to withdraw: "))
+                            if amount > Account[name]['balance']:
+                                print("Insufficient funds!")
+                            else:
+                                Account[name]['balance'] -= amount
+                                print(f"Rs. {amount} withdrawn successfully.")
+
+                        elif Check == 3:
+                            name = input("Enter customer name: ")
+                            if name not in Account:
+                                print("Customer not found!")
+                                continue
+
+                            pin = input("Enter your PIN: ")
+                            if pin != Account[name]['pin']:
+                                print("Incorrect PIN!")
+                                continue
+
+                            print(f"Current balance for {name} is Rs. {Account[name]['balance']}")
+
+                        elif Check == 4:
+                            print("Thanks for visiting Laxmi Chit Fund Bank")
+                            break
+
+                        else:
+
+                            print("Invalid option. Please enter a valid number (1-4).")
+
+                Sheet()
+        elif Check=="No":
+            print("Thank's to Visiting our program......")
+            break
+
+Multifunction()
